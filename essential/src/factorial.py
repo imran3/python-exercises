@@ -3,8 +3,8 @@ def factorial(num):
          return None
          
     res = 1
-    for n in range(num-1, 1, -1):
-        res = num * res
+    for n in range(num, 1, -1):
+        res = n * res
     return res
 
 def factorial_recursive(num):
