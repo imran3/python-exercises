@@ -8,11 +8,11 @@ hexNumbers = {
 def hex_to_dec(hexNum):
     if not isinstance(hexNum, str): return None
     
-    charLocation = 0
-    res = 0
+    exponent = 0
+    decimalVal = 0
     for char in reversed(hexNum.upper()):
         if char not in hexNumbers: return None
         
-        res += hexNumbers[char] * (16 ** charLocation)
-        charLocation +=1
-    return res
+        decimalVal += hexNumbers[char] * (16 ** exponent)
+        exponent +=1
+    return decimalVal
