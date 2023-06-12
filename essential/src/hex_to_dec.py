@@ -10,7 +10,7 @@ def hex_to_dec(hexNum):
     
     charLocation = 0
     res = 0
-    for char in reversed(hexNum):
+    for char in reversed(hexNum.upper()):
         if char not in hexNumbers: return None
         
         res += hexNumbers[char] * (16 ** charLocation)
