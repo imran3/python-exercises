@@ -4,13 +4,13 @@ def encode_art(inputToEncode):
     if not isinstance(inputToEncode, str) or not inputToEncode: return None
 
     res = []
-    currentChar = inputToEncode[0]
+    previousChar = inputToEncode[0]
     ctr = 0
-    for c in inputToEncode + ' ':
-        if c != currentChar:
-            res.append((currentChar, ctr))
+    for char in inputToEncode + ' ':
+        if char != previousChar:
+            res.append((previousChar, ctr))
             ctr = 0
-            currentChar = c
+            previousChar = char
         ctr += 1
 
     return res
