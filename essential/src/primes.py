@@ -11,5 +11,3 @@ def primesUpTo(num):
                 primes.append(number)
                 break
     return primes
-
-print(primesUpTo(10))
