@@ -17,7 +17,7 @@ class Messenger:
 
 class SaveMessages(Messenger):
     savedMessages = []
-    
+
     def receive(self, message):
         self.savedMessages.append(f'{getCurrentTime()} - {message}')
 
@@ -25,13 +25,12 @@ class SaveMessages(Messenger):
         for message in self.savedMessages:
             print(message)
 
+# test run
 listener = SaveMessages()
 sender = Messenger([listener])
+
 sender.send('Hello, there! This is the first message')
-
-# Run this cell after you've written your solution
 sender.send('Oh hi! This is the second message!')
-
-# Run this cell after you've written your solution
 sender.send('Hola! This is the third and final message!')
+
 listener.printMessages()
