@@ -22,17 +22,3 @@ def decode_art(encodedList):
         res += char * ctr
     
     return res
-
-
-
-art = '''
-              ,,_
-              (=-'
-         /\/\  ))
-       ~/    \/ |
-       | )___(  |
-       |/     \||
-ejm98  |'      |'
-'''
-
-print(decode_art(encode_art(art)))

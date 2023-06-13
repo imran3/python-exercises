@@ -12,10 +12,21 @@ def test_encode_empty_string_input():
     expected = None
     res = encode_art(input)
     assert res == expected
-    
+
 def test_encode_invalid_input():
     input = 1244
     expected = None
     res = encode_art(input)
     assert res == expected
 
+def test_decode():
+    input = [('A', 1), ('X', 3), (' ', 1), ('Q', 2), ('&', 5), ('\n', 2), ('P',6)]
+    expected = '''AXXX QQ&&&&&\n\nPPPPPP'''
+    res = decode_art(input)
+    assert res == expected
+
+def test_decode_empty():
+    input = []
+    expected = ''
+    res = decode_art(input)
+    assert res == expected
