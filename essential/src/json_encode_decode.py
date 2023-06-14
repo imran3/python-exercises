@@ -1,34 +1,23 @@
 import json
 from json import JSONDecodeError, JSONEncoder
 
-def parseJson(jsonString):
+def decodeJSON(jsonString):
     try:
         res = json.loads(jsonString)
         return res
-    except JSONDecodeError as e:
-        print(e)
+    except JSONDecodeError:
+        return "Input is not valid JSON"
 
-def toJson(inputObject):
+def encodeJSON(inputObject):
     return json.dumps(inputObject)
 
-# test
-myJson = '{"name": "John Smith","age": 30,"city": "New York","email": "johnsmith@example.com"}'
-res = parseJson(myJson)
-print(toJson(res))
-
-
-
-# custom encoder
 class Car:
     def __init__(self, model):
         self.model = model
 
+# custom encoder
 class CarJSONEncoder(JSONEncoder):
     def default(self, o):
         if isinstance(o, Car):
             return o.model
         return super().default(0)
-    
-# test customer encoder
-carsDict = {'a': Car('Audio'), 'b': Car('BMW'), 'T': Car('Toyota')}
-print(json.dumps(carsDict, cls=CarJSONEncoder))
