@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-exercises"
+version = "0.1.0"
+description = "Collection of solutions and corresponding unit tests, implemented in Python."
+authors = ["imran3 <imranazam3@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "python_exercises"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.2"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
